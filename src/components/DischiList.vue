@@ -1,8 +1,9 @@
 <template>
-    <div>
+<div class="container">
+    <div class="dischi-container">
         <Disco v-for="(element, index) in disks" :key="index" :details="element" />
     </div>
-  
+</div>  
 </template>
 
 <script>
@@ -31,8 +32,14 @@ export default {
 
 </script>
 
-<style scoped >
+<style  >
 
-    
+    .dischi-container{
+        width: 70%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px 0px;
+    }
 
 </style>

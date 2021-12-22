@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-      <div class="dischi-container">
+  
+      
           <div class="single-disco">
               <div class="disco-img">
                   <img :src="details.poster" alt="">
@@ -11,8 +11,8 @@
                   <div class="date grey">{{ details.year }}</div>
               </div>
           </div>
-      </div>
-  </div>
+      
+  
 </template>
 
 <script>
@@ -34,18 +34,12 @@ export default {
         background-color: #1e2d3b;
     }
 
-    .dischi-container{
-        width: 70%;
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-    }
-
     .single-disco{
-        width: calc(100% / 5);
+        width: calc(100% / 5 - 20px);
         background-color: #2e3a46;
         padding: 10px;
         text-align: center;
+        margin: 10px;
     }
 
     .white{
@@ -54,6 +48,10 @@ export default {
 
     .grey{
         color: #6c6e71;
+    }
+
+    .disco-dati{
+        padding: 10px 0px;
     }
 
 </style>
