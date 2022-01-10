@@ -1,7 +1,7 @@
 <template>
 <div class="container">
     <div class="dischi-container">
-        <Disco v-for="(element, index) in disks" :key="index" :details="element" />
+        <Disco v-for="(element, index) in filterValue" :key="index" :details="element" />
     </div>
 </div>  
 </template>
@@ -10,11 +10,13 @@
 // import HelloWorld from "./components/HelloWorld.vue";
 import axios from 'axios';
 import Disco from "./Disco.vue";
+import FilterDisc from "./FilterDisc.vue";
 
 export default {
   name: "DischiList",
   components: {
-    Disco
+    Disco,
+    FilterDisc
     
   },
   data: function() {
@@ -27,8 +29,17 @@ export default {
         .then((response) => {
             this.disks = response.data.response;
         });
+    },
+
+    methods: {
+        discSelect: function(){
+            if (filterValue === "") {
+                return this.disks
+            }
+        }
     }
 };
+
 
 </script>
 

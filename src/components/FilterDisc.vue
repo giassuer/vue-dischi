@@ -1,6 +1,7 @@
 <template>
     <div class="filter">
         <select @change="test" v-model="filterValue" name="" id="">
+            <option value="all">all</option>
             <option value="rock">rock</option>
             <option value="pop">pop</option>
             <option value="dance">dance</option>
@@ -18,7 +19,7 @@ export default{
         }
     },
 
-    metods: {
+    methods: {
         test: function(){
             alert(this.filterValue)
         }
