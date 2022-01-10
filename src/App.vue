@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Header />
-    <FilterDisc />
-    <DischiList />
+    <FilterDisc @selectDisc="selectDisc" />
+    <DischiList :genere="genereValue" />
   </div>
 </template>
 
@@ -19,6 +19,16 @@ export default {
     FilterDisc,
     DischiList
   },
+  data: function(){
+    return{
+      genereValue: "all"
+    }
+  },
+  methods: {
+    selectDisc: function(value){
+      this.genereValue = value
+    }
+  }
 };
 </script>
 

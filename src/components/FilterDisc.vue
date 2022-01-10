@@ -15,13 +15,13 @@ export default{
     name: "FilterDisc", 
     data: function(){
         return{
-            filterValue: ""
+            filterValue: "all"
         }
     },
 
     methods: {
         test: function(){
-            alert(this.filterValue)
+            this.$emit("selectDisc",this.filterValue)
         }
     }
 }
